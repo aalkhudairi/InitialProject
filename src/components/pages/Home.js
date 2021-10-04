@@ -1,16 +1,18 @@
 import '../../App.css';
 import HeroSection from '../HeroSection';
 import React from 'react';
-import Login from '../Login';
-
+import Cards from '../Cards';
 
 
 
 function Home () {
     return (
+        
         <div>
           <HeroSection/>  
-          <Login/>
+          <Cards/> 
+          
+         
           </div>
     );
 }

@@ -26,3 +26,7 @@ function HeroSection() {
 }
 
 export default HeroSection;
+
+
+/* use useEffevt and useState
+try to find some dummy data to fetch */

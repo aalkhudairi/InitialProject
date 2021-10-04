@@ -4,7 +4,6 @@ import {GiFilmSpool} from 'react-icons/gi'
 import {FaBars, FaTimes} from 'react-icons/fa';
 import { Button } from './Button'; 
 import './NavBar.css'; 
-import Login from './Login';
 
 
 
@@ -32,8 +31,8 @@ function NavBar() {
     return (
         
          <div className="navbar">
-           <div className="navbar-container container">
-               <Link to='/' className="navbar-logo">
+           <div className="navbar-container">
+               <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
                    <GiFilmSpool className='navbar-icon' />
                    Events
                </Link>
@@ -42,30 +41,30 @@ function NavBar() {
                </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
-                        <Link to='/' className="nav-links">
+                        <Link to='/' className="nav-links" onClick={closeMobileMenu}>
                             Home
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/memberships' className="nav-links">
-                            Memberships
+                        <Link to='/products' className="nav-links" onClick={closeMobileMenu}>
+                            Data
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/contact Us' className="nav-links">
+                        <Link to='/services' className="nav-links" onClick={closeMobileMenu}>
                             Contact Us
                         </Link>
                     </li>
                     <li className="nav-btn"> 
                         {button ? (
-                            <Link to={'/sign-up'} className="btn-link">
+                            <Link to='/sign-up' className="btn-link" onClick={closeMobileMenu}>
                                 
                                <Button buttonStyle='btn--outline'>
                                    SIGN UP
                                </Button>
                             </Link>
                         ) : (
-                            <Link to='/sign-up' className='btn-link'>
+                            <Link to='/sign-up' className='btn-link' onClick={closeMobileMenu}>
                                 
                                 <Button buttonStyle='btn--outline'
                                  buttonSize='btn--mobile'>

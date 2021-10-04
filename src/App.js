@@ -1,49 +1,40 @@
+import React, {useState, useEffect} from 'react'; 
+import Navbar from './components/NavBar';
 import './App.css';
-import NavBar from './components/NavBar';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from './components/pages/Home'; 
-import HeroSection from './components/HeroSection';
-import Login from './components/Login';
-import {Link} from "react-router-dom";
-import React, {useState} from 'react';
+import Home from './components/pages/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Services from './components/pages/Services';
+import products from './components/pages/Products';
+import SignUp from './components/pages/SignUp';
 
-
-function App() {
-
-
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123"
-  }; 
-
-  const [user, setUser] = useState({name: "", email: ""});
-  const [error, setError] = useState(""); 
-
-  const Login = details => {
-    console.log(details); 
-
-  }
-
-  const Logout = () => {
-    console.log("Logout");
-  }
 
  
+function App() {
 
+  
   return (
-    <div>  
+  
 
-    <Router>
-      <NavBar /> 
-      <Switch> 
-        <Route path='/' component= {Home} />
-        <Route path='/btn-link' component={Login}/>
-      </Switch>
-    </Router>
-    
-    </div> 
+
+
+
+    <div>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/services' component={Services} />
+          <Route path='/products' component={products} />
+          <Route path='/sign-up' component={SignUp}
+           />
+        </Switch>
+      </Router>
+      </div>
+
     
   );
 }
 
 export default App;
+
+
